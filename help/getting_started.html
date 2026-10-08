@@ -1,0 +1,78 @@
+
+<div uib-accordion-group is-open="isOpen" class="help-accordion-color">
+    <uib-accordion-heading>
+        <span class="help-accordion-heading" ng-click="trackHelpSectionClick('Getting Started', '1.0.0', isOpen)">Getting Started</span>
+        <span class="pull-right">
+            <i class="glyphicon" ng-class="{'glyphicon-chevron-down': isOpen, 'glyphicon-chevron-right': !isOpen}" ng-click="trackHelpSectionClick('Getting Started', '1.0.0', isOpen)"></i>
+        </span>
+    </uib-accordion-heading>
+
+    <div class="help-item-body grey-accordion-content">
+
+        <br />
+
+        <h4>Welcome!</h4>
+
+        <br />
+
+        This section will help you familiarise yourself with the dashboard of the sMockin API mock tool.
+
+        <br />
+        <br />
+
+        Once you have installed sMockin locally to your machine, you can access the main dashboard from here <a href="http://localhost:8000/index.html" target="_" rel="noopener nofollow"><b>http://localhost:8000/index.html</b></a>
+
+        <br />
+        <br />
+
+        Below is a breakdown of the dashboard:
+
+        <br />
+        <br />
+        <br />
+
+        <div class="center-it">
+            <img src="image/installed_dashboard.png" class="max-image-width" />
+        </div>
+
+        <br />
+        <br />
+
+        <div class="getting-started-numbers">
+            <b>1.</b> All your mocks are batched by path name and listed alphabetically.
+            <br />
+            <b>2.</b> The HTTP method and full path name of the mocked endpoint.
+            <br />
+            <b>3.</b> The date the mock was created.
+            <br />
+            <b>4.</b> The type used for the mock (See 'The Different Mocking Types' for more info).
+            <br />
+            <b>5.</b> Highlights whether the mock is currently enabled or not.
+            <br />
+            <b>6.</b> The 'View' button, opens up the editor and shows the inner workings of the mock.
+            <br />
+            <b>7.</b> Expands / Collapses the batched mocks on view.
+            <br />
+            <b>8.</b> Bulk operations to view / select mocks from the dashboard.
+            <br />
+            <b>9.</b> Opens mock server configuration settings.
+            <br />
+            <b>10.</b> The current status of the mock server.
+            <br />
+            <b>11.</b> Control to Start / Stop the mock server.
+            <br />
+            <b>12.</b> Bulk operations to Delete, Import / Export mocks on the dashboard.
+            <br />
+            <b>13.</b> Opens the mock editor for creating a new mock.
+            <br />
+            <b>14.</b> Drop down menu with links to Live Feed Logging Tool, HTTP & WS Clients and Help pages.
+            <br />
+            <b>15.</b> Opens proxy settings, for running sMockin as a proxy server.
+        </div>
+
+        <br />
+        <br />
+
+    </div>
+
+</div>

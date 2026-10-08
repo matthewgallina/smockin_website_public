@@ -1,0 +1,147 @@
+
+<div uib-accordion-group is-open="isOpen">
+    <uib-accordion-heading>
+        <span class="help-accordion-heading" ng-click="trackHelpSectionClick('Creating a Simple Mock', '1.0.0', isOpen)">Creating a Simple Mock</span>
+        <span class="pull-right">
+            <i class="glyphicon" ng-class="{'glyphicon-chevron-down': isOpen, 'glyphicon-chevron-right': !isOpen}" ng-click="trackHelpSectionClick('Creating a Simple Mock', '1.0.0', isOpen)"></i>
+        </span>
+    </uib-accordion-heading>
+
+    <div class="help-item-body white-accordion-content">
+
+        <br />
+
+        The below example will help you to create a simple <b>Hello World</b> web service:
+
+        <br />
+        <br />
+        <br />
+
+        1. From the dashboard, click the <b>+ New HTTP Endpoint</b> button.
+
+        <br />
+        <br />
+
+        <span class="help-image-offset">
+            <img src="image/getting-started-1.png" class="max-image-width" />
+        </span>
+
+        <br />
+        <br />
+        <br />
+
+        2. Enter <b>"/helloworld"</b> as the <b>path</b> and select <b>GET</b> as the <b>method</b>.
+
+        <br />
+        <br />
+
+        <span class="help-image-offset">
+            <img src="image/getting-started-2.png" class="max-image-width" />
+        </span>
+
+        <br />
+        <br />
+        <br />
+
+        3. Click the <b>+ Add Seq Response</b> button.
+
+        <br />
+        <br />
+
+        <span class="help-image-offset">
+            <img src="image/getting-started-3.png" class="max-image-width" />
+        </span>
+
+        <br />
+        <br />
+        <br />
+
+        4. Enter <b>"text/plain"</b> as the <b>Content Type</b> and <b>"Hello World"</b> as the <b>Response Body</b>.
+
+        <br />
+        <br />
+
+        <span class="help-image-offset">
+            <img src="image/getting-started-4.png" class="max-image-width" />
+        </span>
+
+        <br />
+        <br />
+        <br />
+
+        7. Click the <b>Add</b> button and then lastly the <b>Save</b> button.
+
+        <br />
+        <br />
+
+        <span class="help-image-offset">
+            <img src="image/getting-started-5.png" class="max-image-width" />
+        </span>
+
+        <br />
+        <br />
+        <br />
+
+
+        8. Then lastly the <b>Save</b> button.
+
+        <br />
+        <br />
+
+        <span class="help-image-offset">
+            <img src="image/getting-started-6.png" class="max-image-width" />
+        </span>
+
+        <br />
+        <br />
+        <br />
+
+        9. The new endpoint should now be present on the dashboard
+
+        <br />
+        <br />
+
+        <div class="center-it">
+            <img src="image/getting-started-7.png" class="max-image-width" />
+        </div>
+
+        <br />
+        <br />
+        <br />
+
+        Using <b>cURL</b> you can access the mocked endpoint like so:
+
+        <br />
+        <br />
+
+        <div class="well well-overflow">
+            <b>curl -i -X GET http://localhost:8001/helloworld</b>
+        </div>
+
+        <br />
+
+        ...or where sMockin is running in <b>multi user mode</b> and the mock was created by user <b>joe</b>:
+
+        <br />
+        <br />
+
+        <div class="well well-overflow">
+            <b>curl -i -X GET http://localhost:8001/joe/helloworld</b>
+        </div>
+
+        <br />
+
+        ...or with your favourite HTTP client tool:
+
+        <br />
+        <br />
+
+        <div class="center-it">
+            <img src="image/getting-started-8.png" class="max-image-width" />
+        </div>
+
+        <br />
+
+    </div>
+
+</div>

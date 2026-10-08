@@ -1,0 +1,180 @@
+
+<div uib-accordion-group is-open="isOpen">
+    <uib-accordion-heading>
+        <span class="help-accordion-heading" ng-click="trackHelpSectionClick('Using Stored Key/Value Data', '1.0.0', isOpen)">Using Stored Key/Value Data</span>
+        <span class="pull-right">
+            <i class="glyphicon" ng-class="{'glyphicon-chevron-down': isOpen, 'glyphicon-chevron-right': !isOpen}" ng-click="trackHelpSectionClick('Using Stored Key/Value Data', '1.0.0', isOpen)"></i>
+        </span>
+    </uib-accordion-heading>
+
+    <div class="help-item-body white-accordion-content">
+
+        <br />
+        <br />
+
+        You can store Key/Value data pairs within sMockin, which can be later recalled in your mock responses
+        using either <b>Response Variables</b> or <b>Custom Javascript.</b>
+
+        <br />
+        <br />
+
+        To see this in action, please follow the steps below.
+
+        <br />
+        <br />
+        <br />
+
+
+        1. Open the <b>Tools</b> drop down menu, from the top right hand corner of the dashboard and select <b>Manage Key / Value Data</b>
+
+        <br />
+        <br />
+
+        <span class="help-image-offset">
+            <img src="image/kvp-1.png" class="max-image-width" />
+        </span>
+
+        <br />
+        <br />
+        <br />
+
+
+        2. Start by adding a new key / value data pair
+
+        <br />
+        <br />
+
+        <span class="help-image-offset">
+            <img src="image/kvp-2.png" class="max-image-width" />
+        </span>
+
+        <br />
+        <br />
+        <br />
+
+
+        3. Enter your chosen data and click <b>Save</b>
+
+        <br />
+        <br />
+
+        <span class="help-image-offset">
+            <img src="image/kvp-3.png" class="max-image-width" />
+        </span>
+
+        <br />
+        <br />
+        <br />
+
+
+        4. Once saved, your data entry should be listed like so
+
+        <br />
+        <br />
+
+        <span class="help-image-offset">
+            <img src="image/kvp-4.png" class="max-image-width" />
+        </span>
+
+        <br />
+        <br />
+        <br />
+
+
+        5. The <b>lookUpKvp</b> keyword is used to load in data into a mock's response.
+
+        <br />
+        <br />
+
+        (In this example we'll assume we have a mock called <b>GET /shopping</b>).
+
+        <br />
+        <br />
+
+        Below shows <b>$lookUpKvp</b> in use with <b>Response Variables</b> and provides examples of doing a data
+        lookup with a fixed keyword (i.e 'lunchList') as well as a more dynamic lookup, by using the value of the
+        inbound request parameter 'list'.
+
+        <br />
+        <br />
+
+        <span class="help-image-offset">
+            <img src="image/kvp-5.png" class="max-image-width" />
+        </span>
+
+        <br />
+        <br />
+        <br />
+
+
+        6. Calling the <b>GET /shopping</b> with the request parameter <b>list</b> set to <b>breakfastList</b> allows us to see this
+        in action resulting with the following mock response
+
+        <br />
+        <br />
+
+        <span class="help-image-offset">
+            <img src="image/kvp-6.png" class="max-image-width" />
+        </span>
+
+        <br />
+        <br />
+        <br />
+
+        (The same <b>GET /shopping</b> call using cURL)
+
+        <br />
+        <br />
+
+        <span class="help-image-offset">
+            <img src="image/kvp-7.png" class="max-image-width" />
+        </span>
+
+        <br />
+        <br />
+        <br />
+        <br />
+
+        Below are some reference examples of how you can use <b>lookUpKvp</b> to do different types of fixed and dynamic lookups
+
+        <br />
+        <br />
+
+        <h4>$lookUpKvp in Response Variables</h4>
+
+        <div class="well well-overflow">
+
+            $lookUpKvp('key')
+            <br />
+            $lookUpKvp($requestParameter('name'))
+            <br />
+            $lookUpKvp($requestHeader('name'))
+            <br />
+            $lookUpKvp($requestBody)
+
+        </div>
+
+        <br />
+        <br />
+
+
+        <h4>lookUpKvp() function in Custom Javascript</h4>
+
+        <div class="well well-overflow">
+
+            lookUpKvp('name');
+            <br />
+            lookUpKvp(request.parameters.name);
+            <br />
+            lookUpKvp(request.headers.name);
+            <br />
+            lookUpKvp(request.body);
+
+        </div>
+
+        <br />
+        <br />
+
+    </div>
+
+</div>

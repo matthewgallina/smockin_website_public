@@ -1,0 +1,526 @@
+<?xml version="1.0" encoding="US-ASCII" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="icon" type="image/x-icon" href="favicon.ico">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+	<link type="text/css" rel="stylesheet" href="style/index.css">
+
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-129496706-1"></script>
+
+	<script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'UA-129496706-1');
+
+			function trackDownloadLinkClicks(event, version) {
+				gtag('event', 'download', {
+				  'event_category': 'Software',
+				  'event_label': event,
+				  'value': version
+				});
+			}
+    </script>
+
+	<script src="script/jquery-1.11.1.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+	<script src="script/index.js"></script>
+	<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+	<title>sMockin - API Mocking Tool</title>
+
+</head>
+<body>
+
+	<div class="main-wrapper">
+		<div class="section home-left col-md-4">
+
+			<div class="brand-image-div">
+
+				<h1>
+					<img src="img/smockin_logo.png" class="brand-image" />
+					<div class="brand-text">
+						API Mock Tool
+					</div>
+				</h1>
+
+				<br />
+				<br />
+
+				<h4 class="homepage-link-bg"><a href="#nutshell" class="homepage-link"> Why Mock? </a></h4>
+				<br />
+				<h4 class="homepage-link-bg"><a href="#quick" class="homepage-link"> Get Started </a></h4>
+				<br />
+				<h4 class="homepage-link-bg"><a href="https://www.smockin.com/help" class="homepage-link"> Help Guide & Videos </a></h4>
+				<br />
+				<h4 class="homepage-link-bg"><a href="#download" class="homepage-link"> Download </a></h4>
+
+				<br class="hidden-md hidden-lg" />
+				<br class="hidden-md hidden-lg" />
+				<br class="hidden-md hidden-lg" />
+
+			</div>
+
+
+		</div>
+		<div class="section smockin-back-image col-md-8">
+
+			<div class="product-info">
+
+				<br class="hidden-md" />
+
+				<div class="center-block video-preview-wrapper hidden-xs">
+					<a href="#" onclick="doOpenVideo()">
+						<img src="img/60_secs.png" class="video-preview" />
+					</a>
+				</div>
+
+				<div class="center-block video-preview-wrapper visible-xs">
+					<a href="#" onclick="doOpenVideo()">
+						<img src="img/play_icon.png" class="video-preview-xs" />
+					</a>
+				</div>
+
+				<br class="hidden-md" />
+
+			</div>
+
+		</div>
+	</div>
+
+
+	<div class="quote">
+		<div class="quote-content">
+			"The fastest & easiest way to mock, swap, monitor & intercept APIs"
+		</div>
+	</div>
+
+
+	<div id="nutshell" class="white-section">
+
+		<div class="center-content">
+
+			<div class="homepage-link-bg homepage-link nutshell-content">
+
+				<br />
+
+				<div class="black-section-heading nutshell-content-heading">
+					API Mocking
+				</div>
+
+				<br />
+				<br />
+
+				<div class="nutshell-content-body">
+					Whether mobile, web or microservices based, most modern applications are built upon a number of API based services.
+
+					<br />
+					<br />
+
+					With so many moving parts, setting up the right development environment can be complex and time consuming.
+
+					<br />
+					<br />
+
+					As many software teams are finding, simulating 3rd party APIs can greatly simplify and expedite product delivery.
+
+					<br />
+					<br />
+
+					Featuring a rich user interface, sMockin is a free open source tool allowing you to build, manage and monitor API mocks.
+
+					<br />
+					<br />
+
+				</div>
+
+			</div>
+
+		</div>
+
+	</div>
+
+
+	<div class="quote">
+		<br />
+		<div class="quote-content">
+			"Expedite product delivery by rapidly simulating 3rd party APIs"
+		</div>
+	</div>
+
+	<br />
+
+	<div class="center-content">
+		<img src="img/mocked_api_diagram.png" class="nutshell-image" />
+	</div>
+
+	<div class="quote">
+		<br />
+		<div class="quote-content">
+			"Build dynamic mocks with JavaScript or without code using rich visual tools"
+		</div>
+	</div>
+
+	<div class="screen-images">
+
+		<div class="row no-margin-row">
+			<div class="col-md-6">
+				<img src="img/dashboard.png" class="dashboard-image" />
+			</div>
+			<div class="col-md-6">
+				<br class="visible-xs" />
+				<br class="visible-xs" />
+				<img src="img/client-call.png" class="client-call-image" />
+			</div>
+		</div>
+
+	</div>
+
+
+	<div class="quote">
+		<div class="quote-content">
+			"Intercept & edit HTTP traffic in real time"
+		</div>
+		<br />
+	</div>
+
+
+	<div class="center-content">
+
+		<div class="homepage-link-bg homepage-link nutshell-content">
+
+			<br />
+
+			<div class="black-section-heading nutshell-content-heading">
+				API Traffic Monitoring
+			</div>
+
+			<br />
+			<br />
+
+			<div class="nutshell-content-body">
+				Another challange delivery teams often face is a lack of visibility when it comes which APIs were called and precisely what was sent and received.
+
+				<br />
+				<br />
+
+				Already providing realtime monitoring out the box (so you can trace calls to your mocks), sMockin can also be easily set up as a proxy server on any development machine
+				enabling you to gain a clear insight of all API traffic to and from your app.
+
+				<br />
+				<br />
+
+				Another great benefit of running sMockin as a proxy server is the ability to replace existing API call with mocks and even block and edit responses in realtime.
+
+				<br />
+				<br />
+
+			</div>
+
+		</div>
+
+	</div>
+
+
+	<br />
+
+	<div class="quote">
+		<div class="quote-content">
+			"Swap out existing or missing API services using proxy mode"
+		</div>
+		<br />
+	</div>
+
+	<div class="center-content">
+		<img src="img/smockin_proxy.png" class="mock-types-image" />
+	</div>
+
+	<br />
+
+	<div class="quote">
+		<div class="quote-content">
+			"Avoid blocking development on APIs that aren't readily available"
+		</div>
+		<br />
+	</div>
+
+	<div id="quick" class="black-section">
+
+		<br />
+		<br />
+
+		<div class="homepage-link-bg homepage-link black-section-heading">
+			Get started with the sMockin
+		</div>
+
+		<br />
+		<br />
+
+		<div class="getting-started-content">
+
+			<div class="row no-margin-row">
+				<div class="col-md-12 getting-started-content-row">
+
+					<div class="homepage-link-bg">
+
+						<div class="getting-started-features">
+
+							- Free to download
+
+							<br />
+
+							- Can be used individually or hosted centrally with user accounts
+
+							<br />
+
+							- Mock REST, SSE & Web Sockets
+
+							<br />
+
+							- Mock & manage S3 buckets
+
+							<br />
+
+							- Mock Email Accounts
+
+							<br />
+
+							- Run as a proxy server & substitute missing API services with mocks
+
+							<br />
+
+							- Includes ngrok, giving the option to make mocks instantly public
+
+							<br />
+
+							- Closely monitor request and response activity
+
+							<br />
+
+							- Help guides & video tutorials
+
+							<br />
+
+							- An established Open Source project
+
+							<br />
+							<br />
+							<br />
+							<br />
+
+						</div>
+
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+	</div>
+
+
+	<div id="download" class="white-section">
+
+		<br />
+		<br />
+
+		<div class="row no-margin-row">
+			<div class="col-md-12">
+
+				<h4 class="homepage-link-bg homepage-link white-section-heading">
+					Downloads
+				</h4>
+
+				<br />
+				<br />
+
+				<div class="download-content">
+
+					<b>Source</b> (requires JDK 11 & Maven)
+					<br />
+					<a href="https://github.com/matthewgallina/smockin" target="_blank" onclick="trackDownloadLinkClicks('GITHUB', '2.20.1')">Available on GitHub</a>
+
+					<br />
+					<br />
+
+					<b>Docker</b>
+					<br />
+					<a href="https://hub.docker.com/r/mgallina/smockin" target="_blank" onclick="trackDownloadLinkClicks('DOCKER', '2.20.1')">Available on Docker Hub</a>
+
+				</div>
+
+			</div>
+		</div>
+
+	</div>
+
+	<br />
+	<br />
+	<br />
+
+	<div id="quick-start" class="black-section">
+
+		<br />
+		<br />
+
+		<div class="homepage-link-bg homepage-link black-section-heading">
+			Quick Start
+		</div>
+
+		<br />
+		<br />
+
+		<div class="row no-margin-row">
+			<div class="col-md-12">
+
+				<div class="quick-start-content">
+
+					<br class="visible-xs" />
+					<br class="visible-xs" />
+
+					<h3 class="quick-start-heading">
+						Source Installation <span class="source-requires">(requires JDK 11 & Maven 3)</span>
+					</h3>
+
+					<br class="visible-md visible-lg" />
+
+					1. Run <b class="mobile-friendly-font">git clone https://github.com/matthewgallina/smockin.git</b>
+					<br />
+					2. Run <b>mvn clean install</b>
+					<br />
+					3. Run the <b>install</b> and then <b>start</b> scripts
+					<br />
+
+				</div>
+
+			</div>
+		</div>
+
+		<br class="visible-md visible-lg" />
+		<br class="visible-md visible-lg" />
+
+		<div class="row no-margin-row">
+			<div class="col-md-12">
+
+				<div class="quick-start-content">
+
+					<h3 class="quick-start-heading">
+						Docker Installation
+					</h3>
+
+					<br class="visible-md visible-lg" />
+
+					1. Run <b class="docker-command">docker run --name smockin -d -p 8000:8000 -p 8001:8001 -p 8002:8002 -p 8003:8003 mgallina/smockin:2201</b>
+					<br />
+
+				</div>
+
+			</div>
+		</div>
+
+
+		<br />
+		<br />
+		<br />
+
+		<div style="margin: 15px 15px 15px 30px">
+
+			<h3 class="quick-start-heading">
+				Accessing Admin & Mock Servers
+			</h3>
+
+		<br />
+
+			1. Open the sMockin dashboard <a href="http://localhost:8000/index.html" class="help-link-white" target="_" rel="noopener nofollow"><b>http://localhost:8000/index.html</b></a>
+			<br />
+			2. Follow the <b>Creating a Simple Mock</b> guide at <a href="https://www.smockin.com/help" class="help-link-white" target="_" onclick="trackDownloadLinkClicks('SC_HELP', '2.20.1')"><b>www.smockin.com/help</b></a>
+			<br />
+			3. Access your API mock <b>GET http://localhost:8001/helloworld</b>
+			<br />
+			4. Access your S3 bucket mocks by connecting to <b>http://localhost:8002/</b>
+
+		</div>
+
+
+		<br />
+		<br />
+		<br />
+
+		<div class="quick-start-help">
+			For more help and tips, visit <a href="https://www.smockin.com/help" class="help-link-white" target="_" onclick="trackDownloadLinkClicks('SC_HELP', '2.20.1')"><b>www.smockin.com/help</b></a>
+		</div>
+
+		<br />
+		<br />
+
+	</div>
+
+
+	<div id="contact" class="white-section">
+
+		<br />
+		<br />
+
+		<div class="homepage-link-bg homepage-link white-section-heading">
+			Contact
+		</div>
+
+		<br />
+		<br />
+
+		<div class="row no-margin-row">
+			<div class="col-md-6">
+
+				<div class="contact-content">
+
+					<br />
+
+					Also check out our help section at <a href="https://www.smockin.com/help" class="help-link-black" target="_" onclick="trackDownloadLinkClicks('SC_HELP', '2.20.1')"><b>www.smockin.com/help</b></a>
+
+				</div>
+
+			</div>
+		</div>
+
+		<br />
+		<br />
+		<br />
+
+	</div>
+
+
+	<div id="footer" class="black-section">
+		<div class="footer-company-copyright">
+			<em>Copyright &#xA9; <span id="current_year"></span> Matthew Gallina, All rights reserved.</em>
+		</div>
+	</div>
+
+
+	<div id="product-video-popup">
+
+		<div id="close-video">
+			<a href="#" onclick="doCloseVideo()" class="close-video-link"> X </a>
+		</div>
+
+		<br />
+
+		<div id="product-video" class="center-block product-video-width">
+			<iframe class="product-video-frame" src="https://www.youtube.com/embed/Oz9tMxqNveA?rel=0&amp;modestbranding=1&amp;vq=hd720" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+		</div>
+
+	</div>
+
+	<script>
+		(function() {
+			var date = new Date();
+			document.getElementById('current_year').innerHTML = date.getUTCFullYear();
+		})();
+	</script>
+
+</body>
+</html>

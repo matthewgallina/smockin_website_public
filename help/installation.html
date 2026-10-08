@@ -1,0 +1,72 @@
+
+<div uib-accordion-group is-open="isOpen">
+    <uib-accordion-heading>
+        <span class="help-accordion-heading" ng-click="trackHelpSectionClick('Installation', '1.0.0', isOpen)">Installation</span>
+        <span class="pull-right">
+            <i class="glyphicon" ng-class="{'glyphicon-chevron-down': isOpen, 'glyphicon-chevron-right': !isOpen}" ng-click="trackHelpSectionClick('Installation', '1.0.0', isOpen)"></i>
+        </span>
+    </uib-accordion-heading>
+
+    <div class="help-item-body white-accordion-content">
+
+        <br />
+
+        The sMockin API tool can be installed in a number of ways detailed below:
+
+        <br />
+        <br />
+
+        <h4>Standalone & Binary</h4><span>(binary requires Java 8)</span>
+        <br />
+        <br />
+
+        1. <a href="http://www.smockin.com/#download" target="_"><b>Download</b></a> & unpack the appropriate zip archive
+        <br />
+        2. (Windows & Binary) Run the <b>install</b> and then <b>start</b> scripts
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;(Mac OSX) Copy the sMockin app to your <b>Application</b> folder & then launch the app*
+        <br />
+        3. Open the sMockin dashboard <a href="http://localhost:8000/index.html" target="_" rel="noopener nofollow"><b>http://localhost:8000/index.html</b></a>
+
+        <br />
+        <br />
+
+        *(OSX security may initially block the app from launching. To change this go to System Preferences > Security & Privacy)
+
+
+        <br />
+        <br />
+        <br />
+
+
+        <h4>Source</h4> <span>(requires Java 8 & Maven 3)</span>
+        <br />
+        <br />
+
+        1. Run <b>git clone https://github.com/matthewgallina/smockin.git</b>
+        <br />
+        2. Run <b>mvn clean install</b>
+        <br />
+        3. Run the <b>install</b> and then <b>start</b> scripts
+        <br />
+        4. Open the sMockin dashboard <a href="http://localhost:8000/index.html" target="_" rel="noopener nofollow"><b>http://localhost:8000/index.html</b></a>
+
+
+        <br />
+        <br />
+        <br />
+
+
+        <h4>Docker</h4>
+        <br />
+
+        1. Run <b>docker run --name smockin -d -p 8000:8000 -p 8001:8001 mgallina/smockin:2150</b>
+        <br />
+        2. Open the sMockin dashboard <a href="http://localhost:8000/index.html" target="_" rel="noopener nofollow"><b>http://localhost:8000/index.html
+
+
+        <br />
+
+    </div>
+
+</div>

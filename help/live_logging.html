@@ -1,0 +1,92 @@
+
+<div uib-accordion-group is-open="isOpen" class="help-accordion-color">
+    <uib-accordion-heading>
+        <span class="help-accordion-heading" ng-click="trackHelpSectionClick('Monitoring Mock Server Traffic', '1.0.0', isOpen)">Monitoring Mock Server Traffic</span>
+        <span class="pull-right">
+                        <i class="glyphicon" ng-class="{'glyphicon-chevron-down': isOpen, 'glyphicon-chevron-right': !isOpen}" ng-click="trackHelpSectionClick('Monitoring Mock Server Traffic', '1.0.0', isOpen)"></i>
+                    </span>
+    </uib-accordion-heading>
+
+    <div class="help-item-body grey-accordion-content">
+
+        <br />
+
+        sMockin provides an logging interface for monitoring all traffic to the mock server in real time.
+
+        <br />
+        <br />
+
+        This can be useful when trying to ascertain whether a call was made to a mocked service and to see what the request and response looks like.
+
+        <br />
+        <br />
+
+        Common use cases could be where there is an asynchronous process which eventually makes calls to an endpoint (i.e your mock)
+        or when running sMockin as a proxy server, so as to see whether the response came from the downstream server or is in fact a mock.
+
+        <br />
+        <br />
+        <br />
+
+        You can access the logging interface by selecting <b>HTTP Live Feed</b> from the <b>Tools</b> drop down menu.
+
+        <br />
+        <br />
+
+        <span class="help-image-offset">
+            <img src="image/live-logging-1.png" class="max-image-width" />
+        </span>
+
+        <br />
+        <br />
+        <br />
+
+        An indication of whether the logging interface has successfully connected to the mock server is shown in the bottom right hand corner.
+
+        <br />
+        <br />
+
+        <span class="help-image-offset">
+            <img src="image/live-logging-2.png" class="max-image-width" />
+        </span>
+
+        <br />
+        <br />
+        <br />
+
+        Requests sent to the mock server will appear in a list on the left.
+
+        <br />
+        <br />
+
+        Clicking on each item provides full details of the transaction.
+
+        <br />
+        <br />
+
+        <span class="help-image-offset">
+            <img src="image/live-logging-3.png" class="max-image-width" />
+        </span>
+
+        <br />
+        <br />
+        <br />
+
+        Below is an example of a logging entry, when the sMockin proxy server is enabled.
+
+        <br />
+        <br />
+
+        The areas highlighted are useful for determining whether the final response is a mock or from a downstream service.
+
+        <br />
+        <br />
+
+        <span class="help-image-offset">
+            <img src="image/live-logging-4.png" class="max-image-width" />
+        </span>
+
+
+    </div>
+
+</div>

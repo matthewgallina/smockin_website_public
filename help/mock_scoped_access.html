@@ -1,0 +1,61 @@
+
+<div uib-accordion-group is-open="isOpen">
+    <uib-accordion-heading>
+        <span class="help-accordion-heading" ng-click="trackHelpSectionClick('Calling Your Mocks', '1.0.0', isOpen)">Calling Your Mocks</span>
+        <span class="pull-right">
+            <i class="glyphicon" ng-class="{'glyphicon-chevron-down': isOpen, 'glyphicon-chevron-right': !isOpen}" ng-click="trackHelpSectionClick('Calling Your Mocks', '1.0.0', isOpen)"></i>
+        </span>
+    </uib-accordion-heading>
+
+    <div class="help-item-body white-accordion-content">
+
+        <br />
+
+        Below are a few examples of how to access your mocked endpoints from port <b>8001</b> using cURL:
+
+        <br />
+        <br />
+
+        <h4>Standalone Mode</h4>
+
+        <div class="well well-overflow">
+
+            <b>curl -i -X GET http://localhost:8001/helloworld</b>
+
+            <br />
+            <br />
+
+            <b>curl -i -X GET http://localhost:8001/v1/hello</b>
+
+            <br />
+            <br />
+
+            <b>curl -i -X POST http://localhost:8001/v1/home -H 'Content-Type: text/plain' -d '1 Privet Drive'</b>
+
+        </div>
+
+        <br />
+        <br />
+
+        <h4>Multi User Mode</h4>
+
+        <div class="well well-overflow">
+
+            <b>curl -i -X GET http://localhost:8001/bob/helloworld</b>
+
+            <br />
+            <br />
+
+            <b>curl -i -X GET http://localhost:8001/bob/v1/hello</b>
+
+            <br />
+            <br />
+
+            <b>curl -i -X POST http://localhost:8001/bob/v1/home -H 'Content-Type: text/plain' -d '1 Privet Drive'</b>
+
+        </div>
+
+
+    </div>
+
+</div>

@@ -1,0 +1,440 @@
+
+body, html {
+  font-size: 20px;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  color: #333;
+  line-height: 35px;
+  font-weight: 200;
+}
+
+/*
+Home page
+*/
+.home-left {
+  background: white;  
+}
+
+.smockin-back-image {
+  background-color: black;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 1), rgba(255, 255, 255, 0.2)), url('../img/bg_2.jpg');
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: 40px solid white;
+}
+
+.main-wrapper {
+  height: 100vh;
+}
+
+.section {
+  height: 100%;  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.brand-image-div {
+  height: auto;
+  width: 100%;
+  text-align: center;
+  color: #000;
+}
+
+.brand-image {
+    max-width: 320px;
+}
+
+.brand-text {
+    color: #222;
+    font-size: 24px;
+    letter-spacing: 0px;
+    font-weight: 200;
+}
+
+.homepage-link-bg  {
+  margin: 15px 15px 15px 15px;
+  display: inline-block;
+  font-weight: 200;
+}
+
+.homepage-link {
+  text-decoration: none;
+  color: #222222;
+  line-height: 35px;
+  font-size: 22px;
+}
+
+.contact-content {
+  margin: 15px 15px 15px 30px;
+}
+
+.quick-start-content {
+  font-size: 16px;
+  margin: 15px 15px 15px 30px;
+}
+
+.help-link-white {
+  text-decoration: underline;
+  color: #fff;
+}
+
+.help-link-black {
+  text-decoration: underline;
+  color: #000000;
+}
+
+.no-margin-row {
+  margin-right: 0px;
+  margin-left: 0px;
+}
+
+.center-content {
+  text-align: center;
+}
+
+.nutshell-content {
+  text-align: left;
+  color: #ffffff;
+  line-height: 35px;
+  font-size: 20px;
+  background-color: #000000;
+  padding: 40px;
+  width: 80%;
+}
+
+.nutshell-content-heading {
+  font-size: 30px !important;
+}
+
+.nutshell-content-body {
+  font-size: 24px !important;
+}
+
+.nutshell-image {
+  max-width: 100%;
+}
+
+.quickstart-content {
+  color: #000000;
+  line-height: 35px;
+  font-size: 20px;
+}
+
+.product-info {
+  text-align: center;
+  color: #fff;
+  width: 80%;
+}
+
+#product-video-popup {
+  display: none;
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  z-index: 1000;
+  background-color: rgba(0, 0, 0, 0.6) !important;
+}
+
+.product-video-width {
+  background-color: #ffffff;
+  border: solid 2px #ffffff;
+  border-radius: 8px;
+}
+
+.video-preview-wrapper {
+  opacity: 0.9;
+}
+
+.video-preview {
+  max-height: 250px;
+  border: solid 2px #ffffff;
+  border-radius: 8px;
+}
+
+.video-preview-xs {
+  max-height: 80px;
+  border: solid 2px #ffffff;
+  border-radius: 14px;
+}
+
+#product-video {
+  position: absolute;
+  left: 0px;
+  right: 0px;
+}
+
+.product-video-frame {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+}
+
+.screen-images {
+  text-align: center;
+  margin: 20px;
+  padding: 20px;
+}
+
+.quote {
+  background-color: #ffffff;
+  padding: 45px 0px 60px 0px;
+}
+
+.quote-content {
+  color: #000000;
+  text-align: center;
+  padding: 20px;
+  font-size: 30px;
+  font-style: italic;
+}
+
+.getting-started-content-wrapper {
+  width: 100%;
+}
+
+.dashboard-image {
+  max-width: 100%;
+}
+
+.mock-types-image {
+  max-width: 80%;
+}
+
+.client-call-image {
+  max-width: 100%;
+}
+
+.getting-started-content {
+  text-align: center;
+}
+
+.getting-started-content-row {
+  text-align: left;
+}
+
+.getting-started-features-bullet-margin {
+    margin-left: 13px;
+}
+
+.white-section-heading {
+  color: #000000;
+  font-size: 24px;
+}
+
+.black-section-heading {
+  color: #ffffff;
+  font-size: 24px;
+}
+
+.white-section {
+  background-color: #ffff;
+  color: #000000;
+}
+
+.black-section {
+  background-color: #000;
+  color: #ffffff;
+}
+
+.footer-company-copyright {
+  text-align: center;
+  font-size: 14px;
+  font-weight: 300;
+}
+
+.smockin-button {
+  text-align: center;
+  width: 350px;
+  height: 50px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  border-color: #ccc;
+  padding: 6px 12px;
+}
+
+.just-center-it {
+  text-align: center;
+}
+
+.cloud-restrictions-footer {
+  font-size: 14px;
+  font-weight: 300;
+}
+
+#close-video {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  z-index: 2000;
+  color: #ffffff;
+  font-size: 50px;
+}
+
+#close-video a:link {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+#close-video a:hover {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.close-video-link {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.cloud-link-row {
+  text-align: left;
+}
+
+.cloud-link {
+  margin-left: 80px;
+}
+
+.docker-command {
+  font-size: 12px;
+}
+
+/*
+.vertical-align {
+  display: flex;
+  align-items: center;
+}
+*/
+
+.vcenter {
+  display: inline-block;
+  vertical-align: middle;
+  float: none;
+}
+
+.weight-500 {
+  font-weight: 500;
+}
+
+.download-content {
+    margin-left: 20px;
+}
+
+.text-indent {
+    margin-left: 20px;
+}
+
+.source-requires {
+    font-size: 14px;
+}
+
+.quick-start-help {
+  font-size: 24px;
+  text-align: center;
+}
+
+.mobile-friendly-font {
+    font-size: 16px;
+}
+
+
+@media(max-width:991px) {
+
+  .vertical-align {
+    display:  block;
+  }
+
+  .main-wrapper {
+    margin-right: 0px;
+    margin-left: 0px;
+    height: 100%;
+  }
+
+  .nutshell-image {
+    margin-left: 0px;
+  }
+
+  .cloud-link {
+    margin-left: 0px;
+  }
+
+  .cloud-link-row {
+    text-align: center;
+  }
+
+}
+
+
+@media(max-width:768px) {
+
+  body, html {
+    font-size: 16px;
+  }
+
+  .quote-content {
+    font-size: 21px;
+  }
+
+  .nutshell-content {
+    font-size: 16px !important;
+  }
+
+  .nutshell-content-heading {
+    font-size: 20px !important;
+  }
+
+  .nutshell-content-body {
+    font-size: 16px !important;
+  }
+
+  .white-section-heading {
+    font-size: 20px;
+  }
+
+  .black-section-heading {
+    font-size: 20px;
+  }
+
+  .smockin-button {
+    width: 300px;
+  }
+
+  .homepage-link {
+    font-size: 18px;
+  }
+
+  .quick-start-heading {
+    font-size: 18px;
+  }
+
+  .quick-start-content {
+    font-size: 14px;
+  }
+
+  .quick-start-help {
+    font-size: 16px;
+  }
+
+}
+
+@media(max-width:556px) {
+
+  .mobile-friendly-font {
+    font-size: 10px;
+  }
+
+}
+
+@media(max-width:350px) {
+
+  .brand-image {
+      max-width: 260px;
+  }
+
+  .smockin-button {
+    width: 280px;
+  }
+
+}

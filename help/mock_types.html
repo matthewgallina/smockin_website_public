@@ -1,0 +1,486 @@
+
+<div uib-accordion-group is-open="isOpen" class="help-accordion-color">
+    <uib-accordion-heading>
+        <span class="help-accordion-heading" ng-click="trackHelpSectionClick('Mocking Types', '1.0.0', isOpen)">Mocking Types</span>
+        <span class="pull-right">
+            <i class="glyphicon" ng-class="{'glyphicon-chevron-down': isOpen, 'glyphicon-chevron-right': !isOpen}" ng-click="trackHelpSectionClick('Mocking Types', '1.0.0', isOpen)"></i>
+        </span>
+    </uib-accordion-heading>
+
+    <div class="help-item-body grey-accordion-content">
+
+        <br />
+
+        To help mimic a wide range of use cases, mocks can be created in a number of ways.
+
+        <br />
+        <br />
+
+        The different mocking types available are as follows:
+
+        <br />
+        <br />
+        <br />
+
+        <span class="help-image-offset">
+            <img src="image/mock-types-list.png" class="max-image-width" />
+        </span>
+
+        <br />
+        <br />
+        <br />
+        <br />
+
+
+        <h4>Sequence based</h4>
+
+        <br />
+
+        Sequence based mocks work by sequentially returning responses from a list back to the caller one at a time.
+
+        <br />
+        <br />
+
+        In the example below, this mock returns 3 different responses.
+
+        <br />
+        <br />
+
+        The <b>1st</b> call to the mock will result with a 200 response with the json message { "name" : "bob" }.
+        <br />
+        A <b>2nd</b> call returns a 200, with { "name" : "mary" } as the response body.
+        <br />
+        Lastly a <b>3rd</b> call results in a 500 response error.
+        <br />
+        Making a <b>4th</b> call will simply return to the start of the list and so forth.
+
+        <br />
+        <br />
+
+        <span class="help-image-offset">
+            <img src="image/mock-types-sequence.png" class="max-image-width" />
+        </span>
+
+        <br />
+        <br />
+
+        Should you need to return a particular response more then once, then it is possible to increase the <b>frequency</b>.
+        <br />
+        (note <b>Freq</b> is set to <b>1</b> in the above example, which means each response is only returned once as we move down the list)
+
+        <br />
+        <br />
+
+        Finally it is possible to enable a <b>shuffle</b> mode which randomises responses returned from the list.
+
+        <br />
+        <br />
+        <br />
+        <br />
+
+
+        <h4>Rules based</h4>
+
+        <br />
+
+        Rules based mocks allow you to set logical conditions, so as to determine which response should be returned to the caller.
+
+        <br />
+
+        (note this is done using a visual editor and so does not require any coding skills)
+        <br />
+        <br />
+
+        For example the following rule based mock <b>GET /pets/:name</b> can return 3 possible responses.
+
+        <br />
+        <br />
+
+        The left side of the screen highlights the <b>1st</b> possibility which is 404 response with a json message { "msg": "sorry no match was found" }.
+        <br />
+        This is in fact the <b>default response</b> returned where a no matches were successfully made on a rule.
+
+        <br />
+        <br />
+
+        The right hand side of the screen, lists the 2 other responses, which are respectively returned when their rule is matched.
+
+        <br />
+        <br />
+
+        <span class="help-image-offset">
+            <img src="image/mock-types-rules.png" class="max-image-width" />
+        </span>
+
+        <br />
+        <br />
+        <br />
+
+        Below gives a breakdown of how a rule is formed.
+
+        <br />
+        <br />
+
+        The left hand side, details the response returned when the rule successfully triggered.
+
+        <br />
+
+        The right hand side, lists the logical conditions required to trigger the rule.
+
+        <br />
+        <br />
+
+        <span class="help-image-offset">
+            <img src="image/mock-types-rules-addrule.png" class="max-image-width" />
+        </span>
+
+        <br />
+        <br />
+        <br />
+
+        Lastly, this is the visual editor used to create logical conditions within a rule.
+
+        <br />
+        <br />
+
+        <span class="help-image-offset">
+            <img src="image/mock-types-rules-addcondition.png" class="max-image-width" />
+        </span>
+
+        <br />
+        <br />
+        <br />
+        <br />
+
+
+        <h4>JavaScript based</h4>
+
+        <br />
+        <br />
+
+        For those looking for greater expressive control, sMockin allows you to programmatically define mocks using JavaScript.
+
+        <br />
+        <br />
+
+        Selecting the Custom JavaScript mock type, opens a visual editor where you can access the inbound <b>request</b> and define your <b>response</b>
+        within the <b>handleResponse</b> function.
+
+        <br />
+        <br />
+
+        The <b>handleResponse</b> function itself is mandatory, but can actually be left blank (per the below example) returning just the <b>response</b> object.
+        In this event, the mocked endpoint simply will return a 404 response by default when called.
+
+        <br />
+        <br />
+
+        <span class="help-image-offset">
+            <img src="image/mock-types-customjs.png" class="max-image-width" />
+        </span>
+
+        <br />
+        <br />
+
+        The example below demonstrates how you can write logic around the inbound request, using this to determine the outcome of the response.
+
+        <br />
+        <br />
+
+        In this instance, there is a mocked endpoint <b>GET /hello/:name</b>, which returns a json response based on values from a <b>greeting</b> request parameter
+        and <b>name</b> path variable.
+
+        <br />
+        <br />
+
+        We can expect the call <b>GET /hello/joe?greeting=ola</b> to return <b>{ "msg" : "ola joe" }</b>
+
+        <br />
+        <br />
+
+        <span class="help-image-offset">
+            <img src="image/mock-types-customjs-logic.png" class="max-image-width" />
+        </span>
+
+        <br />
+        <br />
+        <br />
+        <br />
+
+
+        <h4>Externally Fed (Proxy)</h4>
+
+        <br />
+        <br />
+
+        Externally Fed mock types, allow responses to be fed back to the caller in real time from an external source.
+
+        <br />
+        <br />
+
+        Mock responses can be fed to the mock server either through the sMockin UI or via a web service (i.e POST /proxy/{MOCK_ID}), where they are then added to a queue.
+
+        <br />
+        <br />
+
+        To give an example, say the caller invokes the <b>GET /wait</b> endpoint described below, the mock server will check the queue
+        for a response and return the first result it finds.
+
+        <br />
+        <br />
+
+        In the event a response is not available from the queue, the caller will wait (i.e long poll) until one is added to the
+        queue via the dedicated input web service.
+
+        <br />
+        <br />
+
+        <span class="help-image-offset">
+            <img src="image/mock-types-externalfeed.png" class="max-image-width" />
+        </span>
+
+        <br />
+        <br />
+        <br />
+
+        Below is an example of feeding a response to the queue of the <b>GET /wait</b> mock via the <b>POST /proxy/{MOCK_ID}</b> web service:
+
+        <br />
+        <br />
+
+        <div class="well well-overflow">
+            curl -H "Content-Type: application/json" -X POST -d '{"path":"/wait", "method":"GET", "httpStatusCode":200, "responseContentType":"application/json", "body":"{\"name\":\"Hello, the wait is now over\"}"}' http://localhost:8000/proxy/3f737d4a-c236-4c30-9750-4d2ccb36955d
+        </div>
+
+        <br />
+        <br />
+        <br />
+        <br />
+
+
+        <h4>Websocket (Proxy)</h4>
+
+        <br />
+        <br />
+
+        Similar to the Externally Fed mock type, but specific to callers who need a Web Socket client connection.
+
+        <br />
+        <br />
+
+        Mock responses are fed to the mock server via an input console available when viewing the Websocket mock in the UI.
+
+        <br />
+        <br />
+
+        <span class="help-image-offset">
+            <img src="image/mock-types-ws.png" class="max-image-width" />
+        </span>
+
+        <br />
+        <br />
+        <br />
+        <br />
+
+
+        <h4>Server Sent Event (SSE) - (Proxy)</h4>
+
+        <br />
+        <br />
+
+        Similar to the Externally Fed & WebSocket mock types, but specific to callers who need a SSE client connection.
+
+        <br />
+        <br />
+
+        Mock responses are fed to the mock server via an input console available when viewing the SSE mock in the UI.
+
+        <br />
+        <br />
+
+        <span class="help-image-offset">
+            <img src="image/mock-types-sse.png" class="max-image-width" />
+        </span>
+
+        <br />
+        <br />
+        <br />
+        <br />
+
+
+        <h4>WebSocket Rules Based</h4>
+
+        <br />
+        <br />
+
+        Rules Based WebSockets allow you to define rules to determine when and what data to push to any connected clients.
+
+        <br />
+        <br />
+
+        To give an example the following mock <b>GET /ws/pets</b> has 1 rule set up to push a JSON list of appointments, whenever
+        a connecting client sends the message <b>APPOINTMENTS</b>.
+
+        <br />
+        <br />
+
+        All other messages sent by a client result with the message <b>{ "msg" : "Unknown Command" }</b> being pushed back.
+
+        <br />
+        <br />
+
+        <span class="help-image-offset">
+            <img src="image/mock-types-ws-rules-1.png" class="max-image-width" />
+        </span>
+
+        <br />
+        <br />
+        <br />
+
+        Below is a breakdown of rule definition itself.
+
+        <br />
+        <br />
+
+        The Json response body (of appointments) returned by the rule is shown on the left, while the right
+        shows the rule condition (i.e the request body sent by the connected client equals 'APPOINTMENTS').
+
+        <br />
+        <br />
+
+        <span class="help-image-offset">
+            <img src="image/mock-types-ws-rules-2.png" class="max-image-width" />
+        </span>
+
+        <br />
+        <br />
+        <br />
+        <br />
+
+
+        <h4>Stateful REST</h4>
+
+        <br />
+        <br />
+
+        Stateful REST mocks cache and manage JSON data state based on the RESTful instructions they receive, helping to mimic 'real world' data behavior.
+
+        <br />
+        <br />
+
+        When selecting a Stateful REST mock, sMockin will automatically create a suite of endpoints covering the common <b>GET, POST, PUT, DELETE</b> & <b>PATCH</b> actions.
+
+        <br />
+        <br />
+
+        To illustrate this consider the below endpoint <b>/staff</b> which is configured with an initial json data state consisting of 2 records. If left, blank then this will default to an empty json list.
+
+        <br />
+        <br />
+
+        <span class="help-image-offset">
+            <img src="image/mock-types-stateful-1.png" class="max-image-width" />
+        </span>
+
+        <br />
+        <br />
+
+        In this example the field <b>name</b> is specified as the unique record identifier. If left blank, then sMockin will default this to 'id' and auto-populate this field using UUIDs during POST operations.
+
+        <br />
+        <br />
+
+        The <b>Reset Data State</b> button can be used at any point to return the data state back to it's original state.
+
+        <br />
+        <br />
+        <br />
+
+        A call to <b>GET /staff</b> shows the <b>Initial Data State</b> from above being returned
+
+        <br />
+        <br />
+
+        <div class="well well-overflow">
+            curl -i -X GET http://localhost:8001/staff
+        </div>
+
+        <br />
+
+        <span class="help-image-offset">
+            <img src="image/mock-types-stateful-2.png" class="max-image-width" />
+        </span>
+
+        <br />
+        <br />
+        <br />
+
+        Additional staff members <b>Faye</b> and <b>Sally</b> can be added to the data state by calling <b>POST /staff</b>
+
+        <br />
+        <br />
+
+        <div class="well well-overflow">
+            curl -i -X POST http://localhost:8001/staff -d '{ "name": "Faye", "age": 38, "status": "ACTIVE", "department": "Legal" }'
+            <br />
+            curl -i -X POST http://localhost:8001/staff -d '{ "name": "Sally", "age": 45, "status": "ACTIVE", "department": "Senior Management" }'
+        </div>
+
+        <br />
+
+        <span class="help-image-offset">
+            <img src="image/mock-types-stateful-3.png" class="max-image-width" />
+        </span>
+
+        <br />
+        <br />
+        <br />
+
+        <span class="help-image-offset">
+            <img src="image/mock-types-stateful-4.png" class="max-image-width" />
+        </span>
+
+        <br />
+        <br />
+        <br />
+
+        The employee <b>Max</b> can be removed using <b>DELETE /staff/:name</b>
+
+        <br />
+        <br />
+
+        <div class="well well-overflow">
+            curl -i -X DELETE http://localhost:8001/staff/max
+        </div>
+
+        <br />
+
+        <span class="help-image-offset">
+            <img src="image/mock-types-stateful-5.png" class="max-image-width" />
+        </span>
+
+        <br />
+        <br />
+        <br />
+
+        Last of all <b>Sally</b> can be moved to the 'Board Of Directors' using <b>PATCH /staff/:name</b>
+
+        <br />
+        <br />
+
+        <div class="well well-overflow">
+            curl -i -X PATCH http://localhost:8001/staff/Sally -d '{ "op" : "REPLACE", "path" : "/department", "value" : "Board Of Directors" }'
+        </div>
+
+        <br />
+
+        <span class="help-image-offset">
+            <img src="image/mock-types-stateful-6.png" class="max-image-width" />
+        </span>
+
+        <br />
+        <br />
+
+    </div>
+
+</div>

@@ -1,0 +1,138 @@
+
+<div uib-accordion-group is-open="isOpen">
+    <uib-accordion-heading>
+        <span class="help-accordion-heading" ng-click="trackHelpSectionClick('Block, Mock & Swap', '1.0.0', isOpen)">Block, Mock & Swap</span>
+        <span class="pull-right">
+            <i class="glyphicon" ng-class="{'glyphicon-chevron-down': isOpen, 'glyphicon-chevron-right': !isOpen}" ng-click="trackHelpSectionClick('Block, Mock & Swap', '1.0.0', isOpen)"></i>
+        </span>
+    </uib-accordion-heading>
+
+    <div class="help-item-body white-accordion-content">
+
+        <br />
+
+        sMockin can be used to intercept and block any HTTP responses running through the mock or proxy server.
+
+        <br />
+        <br />
+
+        This can be particularly useful during development where you need to experiment with how different outcomes from an existing API endpoint impact a piece of logic your building. 
+        Simple use cases, could be where you need an existing endpoint to return a new field or want to see what happens to your mobile app when the endpoint returns an error 500.
+
+
+        <br />
+        <br />
+        <br />
+
+        To enable this feature, open the <b>logging interface</b> by selecting <b>HTTP Live Feed</b> from the Tools drop down menu.
+
+        <br />
+        <br />
+
+        <span class="help-image-offset">
+            <img src="image/live-logging-1.png" class="max-image-width" />
+        </span>
+
+        <br />
+        <br />
+        <br />
+
+        From here tick the <b>Enable Response Interceptor</b> checkbox and then click on the <b>manage</b> link.
+
+        <br />
+        <br />
+
+        <span class="help-image-offset">
+            <img src="image/block-mock-swap-2.png" class="max-image-width" />
+        </span>
+
+        <br />
+        <br />
+        <br />
+
+        Next enter the details of the endpoint you wish to intercept (this could be a mock or geninue endpoint you are proxying through sMockin) and then click the <b>green arrow</b> button. 
+        <br />
+        <br />
+        Once done close the <b>Endpoints to Intercept</b> list (note, that the <b>manage</b> link displays a count of many endpoints are setup to be intercepted).
+
+        <br />
+        <br />
+
+        <span class="help-image-offset">
+            <img src="image/block-mock-swap-3.png" class="max-image-width" />
+        </span>
+
+        <br />
+        <br />
+        <br />
+
+        Using a HTTP client (cURL, Postman, etc...), go ahead and make a call to your endpoint.
+
+        <br />
+        <br />
+
+        <div class="well well-overflow">
+            curl -i -X GET http://localhost:8001/helloworld
+        </div>
+
+        <br />
+
+        If successfully intercepted, the request should appear highlighted in <b>red</b> within the <b>logging interface</b>. 
+        <br />
+        <br />
+        From here, click on the <B>red entry</b> to view the request and make any changes to the HTTP response <b>status, body</b> or <b>headers</b> using the editable fields (in this example I've change the response body and added an extra response header).
+        <br />
+        <br />
+        Once done simply click the <b>Release Response</b> button to allow the endpoint call to complete and return back to the caller.
+
+        <br />
+        <br />
+
+        <span class="help-image-offset">
+            <img src="image/block-mock-swap-4.png" class="max-image-width" />
+        </span>
+
+        <br />
+        <br />
+        <br />
+
+        The entry in the logging interface will no longer be editible and display the result of the final request and response.
+
+        <br />
+        <br />
+
+        <span class="help-image-offset">
+            <img src="image/block-mock-swap-5.png" class="max-image-width" />
+        </span>
+
+        <br />
+        <br />
+        <br />        
+
+        The caller will have also received the amended response (note the amended body and extra response header).
+
+        <br />
+        <br />
+
+        <span class="help-image-offset">
+            <img src="image/block-mock-swap-6.png" class="max-image-width" />
+        </span>
+
+        <br />
+        <br />
+        <br />
+
+        You can amend the endpoints you need to intercept at any stage, by clicking on the <b>manage</b> link and revisting the <b>Endpoints to Intercept</b> list.
+
+        <br />
+        <br />
+        <br />
+
+        A final point worth noting, is that should you abruptly close the <b>logging interface</b> at any stage or even experience a browser crash, sMockin will automatically release any blocked requests and return the original response back to the caller. This is a deliberate safeguard to prevent any intercepted calls becoming indefinately locked.
+
+        <br />
+        <br />
+
+    </div>
+
+</div>

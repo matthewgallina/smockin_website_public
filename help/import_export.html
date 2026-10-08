@@ -1,0 +1,80 @@
+
+<div uib-accordion-group is-open="isOpen" class="help-accordion-color">
+    <uib-accordion-heading>
+        <span class="help-accordion-heading" ng-click="trackHelpSectionClick('Mock Importing & Exporting', '1.0.0', isOpen)">Mock Importing & Exporting</span>
+        <span class="pull-right">
+                        <i class="glyphicon" ng-class="{'glyphicon-chevron-down': isOpen, 'glyphicon-chevron-right': !isOpen}" ng-click="trackHelpSectionClick('Mock Importing & Exporting', '1.0.0', isOpen)"></i>
+                    </span>
+    </uib-accordion-heading>
+
+    <div class="help-item-body grey-accordion-content">
+
+        <br />
+
+        sMockin provides import / export functionality from the dashboard to help you manage, share and store your mocks.
+
+        <br />
+        <br />
+        <br />
+
+        <span class="help-image-offset">
+            <img src="image/import-export-1.png" class="max-image-width" />
+        </span>
+
+        <br />
+        <br />
+        <br />
+
+        <b>Exporting</b> mocks can be done by simply selecting the checkbox alongside each mock and clicking the <b>Export</b> button.
+
+        <br />
+        <br />
+
+        <span class="help-image-offset">
+            <img src="image/import-export-2.png" class="max-image-width" />
+        </span>
+
+        <br />
+        <br />
+
+        This will produce a zip file which will be made available to download.
+
+        <br />
+        <br />
+        <br />
+
+        <b>Importing</b> mocks is simply case of clicking on the <b>Import</b> button on the dashboard, selecting
+        your previously exported zip archive file and then clicking the <b>Start Import</b> button.
+
+        <br />
+        <br />
+
+        In the event that you already have mocks using the same endpoint name, there is an option to keep these. Otherwise these will be over written by default.
+
+        <br />
+        <br />
+
+        <span class="help-image-offset">
+            <img src="image/import-export-3.png" class="max-image-width" />
+        </span>
+
+        <br />
+        <br />
+        <br />
+
+        Once the file import has completed, a summary of which mocks were successfully and unsuccessfully imported is presented.
+
+        <br />
+        <br />
+
+        <span class="help-image-offset">
+            <img src="image/import-export-4.png" class="max-image-width" />
+        </span>
+
+        <br />
+        <br />
+        <br />
+
+    </div>
+
+</div>

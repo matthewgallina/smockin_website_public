@@ -1,0 +1,271 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<html>
+
+    <head>
+        <title>sMockin - Help Guide</title>
+
+        <link rel="icon" type="image/x-icon" href="../favicon.ico">
+        <link rel="stylesheet" href="css/lib/bootstrap.min.css" crossorigin="anonymous">
+        <link rel="stylesheet" href="css/lib/bootstrap-theme.min.css" crossorigin="anonymous">
+        <link rel="stylesheet" href="css/help.css" crossorigin="anonymous">
+
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-198153670-1"></script>
+
+        <script>
+
+            window.dataLayer = window.dataLayer || [];
+
+            function gtag() { 
+                dataLayer.push(arguments); 
+            }
+
+            gtag('js', new Date());
+            gtag('config', 'UA-198153670-1');
+
+            function trackHelpSectionClickJS(section, version, isAlreadyOpen) {
+
+                if (isAlreadyOpen) {
+                    return;
+                }
+
+                gtag('event', 'help_section', {
+                  'event_category': 'help_section',
+                  'event_label': section,
+                  'value': version
+                });
+            }
+
+        </script>
+
+    </head>
+
+    <body ng-app="smockinWebsiteHelp" ng-controller="helpController" class="ng-cloak">
+
+        <div ng-cloak class="ng-cloak">
+
+            <div class="container">
+
+                <br />
+                <br />
+
+                <a href="https://www.smockin.com">
+                    <img src="https://www.smockin.com/img/smockin_logo.png" class="smockin_logo" />
+                </a>
+
+                <br />
+                <br />
+
+                <h3>
+                    {{ helpHeading }}
+                </h3>
+
+                <br />
+                <br />
+
+                <uib-accordion close-others="false" class="table">
+
+                    <div ng-include="'installation.html'" ng-controller="helpController"></div>
+                    <div ng-include="'getting_started.html'" ng-controller="helpController"></div>
+                    <div ng-include="'your_first_mock.html'" ng-controller="helpController"></div>
+                    <div ng-include="'mock_types.html'" ng-controller="helpController"></div>
+                    <div ng-include="'mock_scoped_access.html'" ng-controller="helpController"></div>
+                    <div ng-include="'dynamic_content.html'" ng-controller="helpController"></div>
+                    <div ng-include="'key_value_data.html'" ng-controller="helpController"></div>
+                    <div ng-include="'import_export.html'" ng-controller="helpController"></div>
+                    <div ng-include="'proxy_mode.html'" ng-controller="helpController"></div>
+                    <div ng-include="'live_logging.html'" ng-controller="helpController"></div>
+                    <div ng-include="'live_logging_interceptor.html'" ng-controller="helpController"></div>
+                    <div ng-include="'config_and_troubleshooting.html'" ng-controller="helpController"></div>
+
+                </uib-accordion>
+
+                <br />
+
+                <h3>
+                    {{ videosHeading }}
+                </h3>
+
+                <br />
+                <br />
+
+                <div class="row no-margin-row">
+
+                    <div class="col-md-4 center-it">
+
+                        <div class="center-block video-preview-wrapper">
+
+                            <a href="#" ng-click="doOpenVideo('simple-mock', '1')">
+                                <img src="image/video_thumb.png" class="video-preview" />
+                            </a>
+                            
+                            <br />
+                            <br />
+                            <b>Creating a simple mock (without code)</b>
+                            <br />
+                            <br />
+                            <br />
+                            <br />
+
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-4 center-it">
+
+                        <div class="center-block video-preview-wrapper">
+
+                            <br class="hidden-md hidden-lg" />
+
+                            <a href="#" ng-click="doOpenVideo('dynamic-mock-without-code', '2')">
+                                <img src="image/video_thumb.png" class="video-preview" />
+                            </a>
+
+                            <br />
+                            <br />
+                            <b>Creating a dynamic mock (without code)</b>
+                            <br />
+                            <br />
+                            <br />
+                            <br />
+
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-4 center-it">
+
+                        <div class="center-block video-preview-wrapper">
+
+                            <br class="hidden-md hidden-lg" />
+
+                            <a href="#" ng-click="doOpenVideo('dynamic-mock-with-js', '3')">
+                                <img src="image/video_thumb.png" class="video-preview" />
+                            </a>
+
+                            <br />
+                            <br />
+                            <b>Creating a mock using JavaScript</b>
+                            <br />
+                            <br />
+                            <br />
+                            <br />
+
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-4 center-it">
+
+                        <div class="center-block video-preview-wrapper">
+
+                            <br class="hidden-md hidden-lg" />
+
+                            <a href="#" ng-click="doOpenVideo('dynamic-mock-with-js', '4')">
+                                <img src="image/video_thumb.png" class="video-preview" />
+                            </a>
+
+                            <br />
+                            <br />
+                            <b>Monitoring calls to the mock server</b>
+                            <br />
+                            <br />
+                            <br />
+                            <br />
+
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-4 center-it">
+
+                        <div class="center-block video-preview-wrapper">
+
+                            <br class="hidden-md hidden-lg" />
+
+                            <a href="#" ng-click="doOpenVideo('using-as-proxy', '5')">
+                                <img src="image/video_thumb.png" class="video-preview" />
+                            </a>
+
+                            <br />
+                            <br />
+                            <b>Using sMockin as a proxy</b>
+                            <br />
+                            <br />
+                            <br />
+                            <br />
+
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-4 center-it">
+
+                        <div class="center-block video-preview-wrapper">
+
+                            <br class="hidden-md hidden-lg" />
+
+                            <a href="#" ng-click="doOpenVideo('block-mock-and-swap', '6')">
+                                <img src="image/video_thumb.png" class="video-preview" />
+                            </a>
+
+                            <br />
+                            <br />
+                            <b>Using Block, Mock & Swap</b>
+                            <br />
+                            <br />
+                            <br />
+                            <br />
+
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-4 center-it">
+
+                        <div class="center-block video-preview-wrapper">
+
+                            <br class="hidden-md hidden-lg" />
+
+                            <a href="#" ng-click="doOpenVideo('enable-multiuser-mode', '7')">
+                                <img src="image/video_thumb.png" class="video-preview" />
+                            </a>
+
+                            <br />
+                            <br />
+                            <b>Enabling multi-user mode</b>
+                            <br />
+                            <br />
+                            <br />
+                            <br />
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <br />
+                <br />
+
+            </div>
+
+        </div>
+
+
+        <!-- AngularJS -->
+        <script src="js/lib/angular.min.js" type="text/javascript"></script>
+        <script src="js/lib/angular-sanitize.min.js" type="text/javascript"></script>
+
+        <!-- Bootstrap -->
+        <script src="js/lib/ui-bootstrap-tpls-2.5.0.min.js"></script>
+
+        <!-- Controllers -->
+        <script src="js/help.js"></script>
+
+    </body>
+
+</html>

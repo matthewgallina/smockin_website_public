@@ -1,0 +1,176 @@
+
+<div uib-accordion-group is-open="isOpen">
+    <uib-accordion-heading>
+        <span class="help-accordion-heading" ng-click="trackHelpSectionClick('Running sMockin as a Proxy', '1.0.0', isOpen)">Running sMockin as a Proxy</span>
+        <span class="pull-right">
+            <i class="glyphicon" ng-class="{'glyphicon-chevron-down': isOpen, 'glyphicon-chevron-right': !isOpen}" ng-click="trackHelpSectionClick('Running sMockin as a Proxy', '1.0.0', isOpen)"></i>
+        </span>
+    </uib-accordion-heading>
+
+    <div class="help-item-body white-accordion-content">
+
+        <h4>Enabling & Configuring the Proxy Server</h4>
+
+        <br />
+
+        As of <b>version 2.9.0</b>, sMockin can be run as a proxy server allowing you to situate sMockin between your client devices (mobile, web) and any number of backend API applications (i.e micro services).
+        From here sMockin is able to intercept requests and switch out any missing or existing API endpoints with whichever mocked responses you like.
+
+        <br />
+        <br />
+        <br />
+
+
+        To enable this mode, click on <b>proxy settings</b> from the dashboard
+
+        <br />
+        <br />
+
+        <span class="help-image-offset">
+            <img src="image/proxy-1.png" class="max-image-width" />
+        </span>
+
+        <br />
+        <br />
+        <br />
+
+
+        From the panel, tick the <b>Enable Proxy Mode</b> checkbox and then select which way round you would like mocks to be intercepted.
+        <br />
+        (In this example we will the approach <b>Forward request DOWNSTREAM first, if nothing found, then look for a matching MOCK'</b>.)
+
+        <br />
+        <br />
+
+        <span class="help-image-offset">
+            <img src="image/proxy-2.png" class="max-image-width" />
+        </span>
+
+        <br />
+        <br />
+        <br />
+
+
+        Next click on the <b>+ New Row</b> button and enter a <b>Path</b> to match requests on and the <b>Downstream URL</b> to pass the request
+        down to in the row that appears.
+        <br />
+        (In this example, I have a web server running on port <b>8004</b> with a <b>GET /v1/pet</b> API endpoint.)
+
+        <br />
+        <br />
+
+        <span class="help-image-offset">
+            <img src="image/proxy-3.png" class="max-image-width" />
+        </span>
+
+        <br />
+        <br />
+        <br />
+
+        With the current setup the proxy server will only intercept requests to <b>/v1/pet</b> and attempt to pass these downstream to <b>http://localhost:8004</b>.
+        In the event the endpoint <b>http://localhost:8004/v1/pet</b> returns a 404, sMockin will then look for a matching mock and return that instead.
+
+        <br />
+        <br />
+
+        Should you need the proxy server to pass <b>all requests</b> to a downstream server then please follow the next optional step below.
+
+        <br />
+        <br />
+
+        <b>(Optional)</b>
+
+        To add a default backend server, that all requests will be routed to, tick the <b>include default (fallback) downstream URL</b> checkbox.
+        An entry will appear in the list with <b>*</b> as the path and from here you can enter your chosen server address.
+
+        <br />
+        <br />
+
+        <span class="help-image-offset">
+            <img src="image/proxy-4.png" class="max-image-width" />
+        </span>
+
+        <br />
+        <br />
+
+        Lastly, click the <b>Update Proxy Config</b> button to save all changes.
+        NOTE if already running, then this will cause sMockin server to restart.
+
+        <br />
+        <br />
+        <br />
+
+        <h4>The Proxy Server in Action</h4>
+
+        <br />
+
+        To demonstrate how the proxy server behaves, consider the following mock <b>GET /v1/pet</b> which returns the
+        'plain/text' response body <b>woof (mock)</b>.
+
+        <br />
+        <br />
+
+        <span class="help-image-offset">
+            <img src="image/proxy-5.png" class="max-image-width" />
+        </span>
+
+        <br />
+        <br />
+        <br />
+
+        With the proxy server disabled a standard call to GET <b>http://localhost:8001/v1/pets</b> would normally return the following result.
+
+        <br />
+        <br />
+
+        <span class="help-image-offset">
+            <img src="image/proxy-6.png" class="max-image-width" />
+        </span>
+
+        <br />
+        <br />
+        <br />
+
+        Having started up a small standalone web application on port <b>8004</b> a call to the API endpoint GET <b>http://localhost:8004/v1/pets</b>
+        returns the following.
+
+        <br />
+        <br />
+
+        <span class="help-image-offset">
+            <img src="image/proxy-7.png" class="max-image-width" />
+        </span>
+
+        <br />
+        <br />
+        <br />
+
+        Lastly with the proxy server enabled in sMockin, a call to the GET <b>http://localhost:8001/v1/pets</b> mock now results in the request
+        being passed through to the standalone web application (on <b>8004</b>) and the response returned (from the standalone server) being passed
+        back to the caller.
+
+        <br />
+        <br />
+
+        <span class="help-image-offset">
+            <img src="image/proxy-8.png" class="max-image-width" />
+        </span>
+
+        <br />
+        <br />
+        <br />
+
+        To help with tracking proxied traffic in sMockin, a response header with the destination URL <b>X-Proxied-Downstream-Url:</b>
+        is added to all traffic served through the proxy server.
+
+        <br />
+        <br />
+
+        You can also use the <b>HTTP Live Feed</b> detailed in the next section to help track proxied traffic.
+
+        <br />
+        <br />
+
+    </div>
+
+</div>

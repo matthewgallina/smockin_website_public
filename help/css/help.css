@@ -1,0 +1,67 @@
+
+[ng\:cloak], [ng-cloak], .ng-cloak {
+    display: none !important;
+}
+
+.help-item-body {
+    font-size: 14px;
+}
+
+.help-accordion-heading {
+    font-size: 18px;
+}
+
+.help-accordion-color {
+    background-color: #eee;
+}
+
+.help-image-offset {
+    margin-left: 20px;
+}
+
+.grey-accordion-content {
+    background-color: #fff;
+    padding: 15px;
+}
+
+.white-accordion-content {
+    border: solid 12px #eee;
+    padding: 15px;
+}
+
+.center-it {
+    text-align: center;
+}
+
+.max-image-width {
+    max-width: 90%;
+    border: solid 2px #eee;
+    border-radius: 6px;
+}
+
+.well-overflow {
+    overflow-x: scroll;
+}
+
+.smockin_logo {
+  max-width: 200px;
+}
+
+.getting-started-numbers {
+  margin-left: 20px;
+}
+
+.video-preview-wrapper {
+  opacity: 0.9;
+}
+
+.video-preview {
+  max-height: 150px;
+  border: solid 2px #333;
+  border-radius: 8px;
+}
+
+.video-preview-xs {
+  max-height: 80px;
+  border-radius: 14px;
+}

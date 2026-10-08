@@ -1,0 +1,127 @@
+
+<div uib-accordion-group is-open="isOpen" class="help-accordion-color">
+    <uib-accordion-heading>
+        <span class="help-accordion-heading" ng-click="trackHelpSectionClick('Configuration & Troubleshooting', '1.0.0', isOpen)">Configuration & Troubleshooting</span>
+        <span class="pull-right">
+                        <i class="glyphicon" ng-class="{'glyphicon-chevron-down': isOpen, 'glyphicon-chevron-right': !isOpen}" ng-click="trackHelpSectionClick('Configuration & Troubleshooting', '1.0.0', isOpen)"></i>
+                    </span>
+    </uib-accordion-heading>
+
+    <div class="help-item-body grey-accordion-content">
+
+
+        <h4>Configuration File Overview</h4>
+        <br />
+
+        (Please note, the following applies to all versions of sMockin, apart from the Docker image.)
+
+        <br />
+        <br />
+
+        All of sMockin's configuration, database and log files can be found under the <b>.smockin</b> folder within the root of your <b>user home</b> directory
+        (this folder may be hidden by default on some operating systems).
+
+        <br />
+        <br />
+
+        <div class="center-it">
+            <img src="image/config_1.png" class="max-image-width" />
+        </div>
+
+        <br />
+        <br />
+
+        (At this point it is worth highlighting that running the sMockin uninstall script will remove this directory, so it you plan to reuse sMockin again in the future, please ensure you make a copy of this as a back up.)
+
+        <br />
+        <br />
+        <br />
+
+        From here the files and folders listed are as follows (please note these will vary depending on your operating system):
+
+        <br />
+        <br />
+
+        <div style="margin-left: 15px;">
+            <b>app.properties</b> - used to set the ports of the main admin application and H2 DB as well as change sMockin from standalone and multi user modes.
+            <br />
+            <b>db</b> - contains the H2 DB (JDBC) driver and data files.
+            <br />
+            <b>logs</b> - contains log output from the main admin application and mock server.
+            <br />
+            <b>pids</b> - contains the process IDs of both the admin application and H2 DB when running (only applies to linux and OSX).
+        </div>
+
+        <br />
+        <br />
+
+        <div class="center-it">
+            <img src="image/config_2.png" class="max-image-width" />
+        </div>
+
+        <br />
+        <br />
+        <br />
+        <br />
+
+
+        <h4>Enabling Multi User Mode</h4>
+        <br />
+
+        sMockin can be run either as a <b>Standalone Tool</b> installed to each user's computer (this is the default setting), or it can be configured to run in <b>Multi User Mode</b> where a single installation is centrally hosted and user's access the platform with individual user accounts. 
+
+        <br />
+        <br />
+
+        To enable <b>multi user mode</b>, shutdown sMockin and then simply open the <b>app.properties</b> file and set the multi user property to true like so: <b>MULTI_USER_MODE = TRUE</b>.
+
+        <br />
+        <br />
+
+        Once saved, start up sMockin and use the default username and password <b>admin</b> to login.
+
+        <br />
+        <br />
+
+        <div class="center-it">
+            <img src="image/config_3.png" class="max-image-width" />
+        </div>
+
+        <br />
+        <br />
+
+        From here, you can change the admin user's password and begin setting up user accounts by clicking on <b>Tools</b> in the top right hand corner.
+
+
+        <br />
+        <br />
+        <br />
+        <br />
+
+
+
+        <h4>Troubleshooting & Debugging</h4>
+        <br />
+
+        Should you encounter an issue either starting up sMockin or whilst the application is running, your first action should be to check the <b>smockin.log</b> application log to see if this offers any clues as to what is failing.
+
+        <br />
+        <br />
+
+        In the rare event the log file does not offer any insight or is not actually present in the <b>USER_HOME/.smockin/logs/</b> directory, you can try downloading the sMockin source project from Github and launching the application using the command: <b>run.sh -CONSOLE</b>
+
+        <br />
+        <br />
+
+        For any developers working on sMockin, there is also the option to launch using DEBUG mode as follows: <b>run.sh -CONSOLE -DEBUG</b>
+
+        <br />
+        <br />
+
+        Running this will enable you to remote connect to the application from your chosen IDE using port 8008.
+
+        <br />
+
+    </div>
+
+</div>

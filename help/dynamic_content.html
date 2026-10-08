@@ -1,0 +1,113 @@
+
+<div uib-accordion-group is-open="isOpen" class="help-accordion-color">
+    <uib-accordion-heading>
+        <span class="help-accordion-heading" ng-click="trackHelpSectionClick('Response Variables', '1.0.0', isOpen)">Response Variables</span>
+        <span class="pull-right">
+                        <i class="glyphicon" ng-class="{'glyphicon-chevron-down': isOpen, 'glyphicon-chevron-right': !isOpen}" ng-click="trackHelpSectionClick('Response Variables', '1.0.0', isOpen)"></i>
+                    </span>
+    </uib-accordion-heading>
+
+    <div class="help-item-body grey-accordion-content">
+
+        <br />
+
+        Dynamic tokens allow you to include certain content dynamically within the response body of your mock.
+
+        <br />
+        <br />
+        <br />
+
+        For example, say your mock features a request parameter called 'name' and you wish to include the value of this within
+        the response body of your mock, this can be done using the <b>$requestParameter</b> token like so:
+
+        <br />
+        <br />
+
+        <div class="well well-overflow">
+            Hello <b>$requestParameter('name')</b>, How are you?
+        </div>
+
+        <br />
+        <br />
+
+        Other inbound params such as request headers, params, path variables and the request body itself are also supported:
+
+        <br />
+        <br />
+
+        <div class="well well-overflow">
+            $requestHeader('header name')
+            <br />
+            $requestParameter('param name')
+            <br />
+            $pathVar('path var name')
+            <br />
+            $requestBody
+            <br />
+        </div>
+
+        <br />
+        <br />
+
+        ISO Date and Time values are also available like so:
+
+        <br />
+        <br />
+
+        <div class="well well-overflow">
+            $isoDate
+            <br />
+            $isoDatetime
+            <br />
+        </div>
+
+        <br />
+        <br />
+
+        The below token can be used to generate a random UUID:
+
+        <br />
+        <br />
+
+        <div class="well well-overflow">
+            $uuid
+        </div>
+
+        <br />
+        <br />
+
+        You can generate random numbers using the following:
+
+        <br />
+        <br />
+
+        <div class="well well-overflow">
+            $randomNumber(10)
+            <br />
+            $randomNumber(5, 10)
+            <br />
+        </div>
+
+        <br />
+        <br />
+
+        Any stored key / value data can be referenced using the following:
+
+        <br />
+        <br />
+
+        <div class="well well-overflow">
+            $lookUpKvp('KEY')
+            <br />
+            $lookUpKvp($pathVar('path var name'))
+            <br />
+        </div>
+
+        (For more details on key / value data, check out the <b>Using Stored Key/Value Data</b> help section)
+
+        <br />
+        <br />
+
+    </div>
+
+</div>
